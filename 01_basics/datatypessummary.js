@@ -34,6 +34,8 @@ let myObj = {
  
 const myFunction = function(){
     console.log("hello js");
+    console.log();
+    
     
 }
 
@@ -44,5 +46,37 @@ typeof cha use karun datatpe kay aahe te kalata ter
     object => function
     function => objectFunction
 */
+
+
+//++++++++++++++++++++++++++MEMORY++++++++++++++++++++++++++++++++++
+/*There are two types of memory 
+1.stack memory for primitive datatypes
+    - jabhi stack memory use hoti hain toh jo bhi aapne variable declare kiya hain uska ek copy milta hain aapko
+2.heap memory for non-primitive-datatypes
+    -jabhi memory heap main use hoti hain toh wahan aapko mil jata hain reference original value ka 
+
+*/
+//eg. for stack memory
+let myYoutubeName = "nileshbhalekar.com"
+
+let anotherName = myYoutubeName;
+anotherName = "nickdotgooglr.com"
+console.log(myYoutubeName);
+console.log(anotherName);
+
+//for heap memory
+ let userOne = {
+    email:"zerozero@google.com",
+    upi : "user@byl"
+ }
+ let userTwo = userOne
+ userTwo.email = "oneone@google.com"
+ console.log(userOne.email);
+ console.log(userTwo.email);
+ 
+ 
+
+
+
 
 
