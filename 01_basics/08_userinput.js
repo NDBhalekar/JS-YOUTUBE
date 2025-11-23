@@ -14,4 +14,3 @@ rl.question("Apna naam daalein: ", function(userName) {
     console.log(`Hello, ${userName}! Welcome to GitHub Codespace.`);
     rl.close(); // Interface close karna zaruri hai
 });
-    
