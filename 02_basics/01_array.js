@@ -56,3 +56,5 @@ console.log("C ",myArr);
 
 
 
+//kuch bhi kar per kar
+fjhbvksdbkjbsf
