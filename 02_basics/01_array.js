@@ -51,11 +51,6 @@ const myn2 = myArr.splice(1,3)//index 1 la 2 la print kara 3 haa include hoto
 console.log(myn2);
 console.log("C ",myArr);
 
-/*main differce between slice and splice ki slice ha jevdha slice kelay original array madhun toh parat jer durya sobat joint kela ter toh purna aray sobat joint hoto mhanje slice cha original arrya ver pharak nahi padat aani splice madhe jithun tumhi splice kelay na te original array madhun kadhunach taktay mere bhayoooooooooo*/
+/*main differce between slice and splice ki slice ha jevdha slice kelay original array madhun toh parat jer durya sobat joint kela ter toh purna array sobat joint hoto mhanje slice cha original aarry ver pharak nahi padat aani splice madhe jithun tumhi splice kelay na te original array madhun kadhunach taktay mere bhayoooooooooo*/
 
 
-
-
-//kuch bhi kar per kar
-fjhbvksdbkjbsfljkbvhcv
-kjkhbgv
