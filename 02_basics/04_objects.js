@@ -83,12 +83,15 @@ console.log(instructor);
 //these a phenonmenon is called DESTRUCTURING
 //it is mostly used in Reactjs
 
+//API INTRO
 //{} >>> he curly braces mhanjech json hoy pan hya madhe keys and value donihi stringch rahatat 
+
 // {
 //     "name":"Hitesh sir",
 //     "class":"free"
 
 // }
+//jaruri nahi pratek veles ki API cha data ha object cha form madhech yeil akhi veles array cha form amdhe pan yeta
 
 //kahi veles aaplyala APIs array cha form madhe pan bhetatat like
 [
