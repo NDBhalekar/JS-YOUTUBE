@@ -1,9 +1,9 @@
-//objects la aaoan don padhatina declare karu shakta 1.ek literal sarkah 2.consrtructor sarkha 
-/*singleton:koi bhi constructor jisse aap banate hain toh singleton ek object banta hain yani ki ye apne tarah ka ek hi object hain 
+//objects la aapan don padhatina declare karu shakta 1.ek literal sarkah 2.consrtructor sarkha 
+/*singleton:koi bhi constructor jisse aap banate hain toh singleton ek object banta hain yani ki, ye apne tarah ka ek hi object hain 
 
--literal ka use karenge rtoh singleton nhi banega & ager constructor ka use karenge toh singleton banega 
+-literal ka use karenge toh singleton nhi banega & ager constructor ka use karenge toh singleton banega 
 
-*/
+/*
 //object literals
 //Object.create() aaise karke bhi aapp object bana sakte hain isse constructive way kahan jata hainn aur issi ke ander singleton banta hain 
 
@@ -17,7 +17,7 @@ const JsUser = {
     isLive : true,
     lastLoginDays : ["mon","thur"]
   }  
-   //object ko kasie access kiya jata hain 
+   //object ko kaise access kiya jata hain 
   // console.log(JsUser.name)  //pan hya methond madhe FullName sarkya variable la use karta yet nahi //or ↓
   // console.log(JsUser["name"])//pan etha saangava lagata ki tumcha variable kotya type cha aahe te
 
@@ -27,15 +27,15 @@ const JsUser = {
 
   /*
 symbol creation
-interview main Q pucha jata hain ki ek key lo usse objects ke keys main add karke  mujhe print karke dikao */
+interview main Q pucha jata hain ki ek key lo usse objects ke keys main add karke mujhe print karke dikao */
 
 const MySum = Symbol("key1")
 
 //
 const JsUser2 = { 
-  //ismain key_value pair strore hote hain 
+  //ismain key_value pair store hote hain 
     name :"NILESH",
-    [MySum]:"mykey1",//sq.bracket madhich declare kartart symbol la//MySum:"mykey1" >>>he without sq braket chukich aahe he string retuen karel
+    [MySum]:"mykey1",//sq.bracket madhich declare kartart symbol la//MySum:"mykey1" >>>he without sq braket chukich aahe he string return karel
     "FullName":"Nilesh Bhalekar",
     roll_no : 23,
     isLive : true,
@@ -53,7 +53,7 @@ const JsUser2 = {
   // // console.log(JsUser2);
 
 
-
+  //function
   //function la aapan as a variable sarkha use karu shakto bhai
 JsUser2.greeting = function(){//function with no parameters
             console.log("Hello JS ");
@@ -66,13 +66,8 @@ console.log(JsUser2.greeting());//=>Hello JS
 
 JsUser2.greetingtwo = function(){
   //backtics are used with doller sign and this keyword is used to access object variables
-            console.log(`Hello JS User, ${this.name}`);       
+            console.log(`Hello JS User ${this.name}`);       
 }
+console.log(JsUser2.greetingtwo());
+
   
-qwertyuikjhgfd
-//added something files in github and git needed
-
-
-
-// iltkuyjh
-//lkjhgfdsa
