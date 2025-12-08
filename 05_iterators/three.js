@@ -6,7 +6,7 @@
 
 const arr = [1, 2, 3, 4, 5]
 
-//for of loop
+//for...of loop
 for (const num of arr) {//variable of kashamadhla tya variable la access karaychay te
     //console.log(num);
 }
