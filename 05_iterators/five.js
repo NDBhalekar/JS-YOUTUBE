@@ -2,6 +2,7 @@
 const coding = ["js", "ruby", "java", "python", "cpp"]
 
 // coding.forEach( function (val){
+//forEach loop la alredy sagla mahiti aahe tumche aarrary badal karan ki aapn tyala dot deun access karat aahot mang fakta .forEach lihun braces madhe function lihun variable cha naav lihine bas nothinf else
 //     console.log(val);
 // } )
 
@@ -9,15 +10,19 @@ const coding = ["js", "ruby", "java", "python", "cpp"]
 //     console.log(item);
 // } )
 
-// function printMe(item){
+// function printMe(item){//created function for printinng
 //     console.log(item);
 // }
 
-// coding.forEach(printMe)
+// coding.forEach(printMe)//function cha reference dyachay fakta mahnje braces lavaycha nahi phakta naav printMe and execution nahi karaycha printMe()
 
-// coding.forEach( (item, index, arr)=> {
+
+// coding.forEach( (item, index, arr)=> {//for each kada iten aasata current + index no aasata pratekacha + arraychi list aasati sagla hya pasiki aapn kahihi access karu shakato
 //     console.log(item, index, arr);
 // } )
+
+
+
 
 const myCoding = [
     {
