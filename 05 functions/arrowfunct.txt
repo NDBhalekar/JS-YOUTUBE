@@ -1,0 +1,168 @@
+**Timestamp:** 16:13 (IST)
+**Time since your last question:** ~3 minutes
+
+First, your corrected sentence:
+
+> **Your:** `what is arrow function in js`
+> **Correct:** *What is an arrow function in JavaScript?*
+
+---
+
+# Arrow Function (JavaScript)
+
+**Arrow Function = Short syntax to write functions**
+
+Introduced in **ES6 (ECMAScript 2015)**.
+
+### Normal Function
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+```
+
+### Arrow Function
+
+```javascript
+const add = (a, b) => {
+  return a + b;
+};
+```
+
+---
+
+# Shortest Form
+
+If **one line return**, we can remove `{}` and `return`.
+
+```javascript
+const add = (a, b) => a + b;
+```
+
+---
+
+# Example
+
+```javascript
+const greet = (name) => {
+  console.log("Hello " + name);
+}
+
+greet("Nilesh");
+```
+
+Output
+
+```
+Hello Nilesh
+```
+
+---
+
+# Syntax
+
+```javascript
+const functionName = (parameters) => {
+    // code
+}
+```
+
+---
+
+# Special Cases
+
+### 1️⃣ One parameter
+
+Parentheses optional.
+
+```javascript
+const square = x => x * x;
+```
+
+---
+
+### 2️⃣ No parameter
+
+```javascript
+const hello = () => {
+  console.log("Hello");
+}
+```
+
+---
+
+### 3️⃣ Returning object
+
+```javascript
+const getUser = () => ({name: "Nilesh", age: 21});
+```
+
+---
+
+# Key Difference (Very Important)
+
+### `this` behavior
+
+Normal function:
+
+```javascript
+function test(){
+   console.log(this);
+}
+```
+
+Arrow function:
+
+```javascript
+const test = () => {
+   console.log(this);
+}
+```
+
+Arrow function **does not have its own `this`**.
+It **inherits `this` from parent scope**.
+
+---
+
+# Where Arrow Functions are Mostly Used
+
+1. **Array methods**
+
+```javascript
+const nums = [1,2,3];
+
+nums.map(num => num * 2);
+```
+
+---
+
+2. **Callbacks**
+
+```javascript
+setTimeout(() => {
+   console.log("Hello");
+}, 1000);
+```
+
+---
+
+# Quick Comparison
+
+| Feature     | Normal Function | Arrow Function  |
+| ----------- | --------------- | --------------- |
+| Syntax      | long            | short           |
+| `this`      | own `this`      | inherits `this` |
+| return      | must write      | optional        |
+| constructor | yes             | no              |
+
+---
+
+# Simple Definition (Interview)
+
+**Arrow Function:**
+A **shorter syntax for writing functions in JavaScript that uses `=>` and does not have its own `this`.**
+
+---
+
+If you want, I can also show **5 arrow function tricks used in React and Node.js interviews**.
