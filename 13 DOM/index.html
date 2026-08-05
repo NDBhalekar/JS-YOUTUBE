@@ -1,0 +1,29 @@
+<!-- dom = mapping hoti hain entire document ki in a object
+ -Window object is the global object in the browser that represents the browser window and contains all global variables, functions, and the DOM.
+-using DOM we can change the css,html
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript DOM</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">This is a box</div>
+    </div>
+
+    <script>
+      document.title = "Harry is really good"; //to change the page title ussing js
+      console.log(document.title); //shows title in console
+      // similarly ↓ shows body in console
+      console.log(document.body);
+      
+// we can also change background color using DOM,it changes color,
+document.body.style.backgroundColor ="green"
+
+    </script>
+  </body>
+</html>

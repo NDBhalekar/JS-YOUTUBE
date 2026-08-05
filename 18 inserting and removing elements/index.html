@@ -1,0 +1,67 @@
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+          .box{
+              color: red;
+          }
+      </style>
+    </head>
+    <body>
+      <div class="container red bg-green">
+        <div class="box" display="flex : hello" data-createdby="nilesh">
+          Hey I am Box
+        </div>
+        <div class="box">Hey I am Box</div>
+      </div>
+      <script>
+        // inserting html tag with class,text using js//this is called dynamically creating element
+        // let div = document.createElement("div");
+        // div.innerHTML = "I have been insereted <b>by Nick </b> "
+        // div.setAttribute("class","created");
+        // document.querySelector(".container").append(div)
+
+        let cont = document.querySelector(".container");
+        cont.insertAdjacentHTML(
+          "afterend",
+          "<b> I am under the watwer pls help me </b>",
+        );
+        cont.insertAdjacentText(
+          "afterbegin",
+          "<b> lorem fghj fgh jvcvbn fgh j </b>",
+        );
+        let b = document.createElement("b"); // DOM element created
+        b.textContent = "poi poi poi poi poi";
+
+        cont.insertAdjacentElement("beforebegin", b);
+        // cont.insertAdjacentHTML("beforeend","<b> nm bnm b nm bnm bnm b nm bn</b>")
+      </script>
+    </body>
+  </html>
+
+
+  <!-- toggle :means aager class lagi ahin toh hata do ager nhi hain toh laga do-->
+
+
+
+
+
+
+
+
+
+
+
+  /*document.querySelector(".container").classList
+  DOMTokenList(3) ['container', 'red', 'bg-green', value: 'container red bg-green']
+  document.querySelector(".container").class
+  undefined
+  document.querySelector(".container").className
+  'container red bg-green'
+  document.querySelector(".container").classList.add("harry")
+  undefined
+  document.querySelector(".container").classList.remove("harry")
+  undefined*/

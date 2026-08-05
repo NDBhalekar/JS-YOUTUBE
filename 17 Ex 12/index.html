@@ -1,0 +1,62 @@
+<!-- change boxes color using dom selecting -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            height: 45px;
+            width: 45px;
+            border: 2px solid black;
+            padding: 13px;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <div class="box bq">box 1</div>
+    <div class="box bw">box 2</div>
+    <div class="box be">box 3</div>
+    <div class="box br">box 4</div>
+    <div class="box bt">box 5</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<!-- ans
+ boxes = document.getElementsByClassName("box")
+
+HTMLCollection(5) [div.box.bq, div.box.bw, div.box.be, div.box.br, div.box.bt]
+box[1].backgroundColor = "red"
+
+VM592:1 Uncaught ReferenceError: box is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM592:1Understand this error
+boxes[1].backgroundColor = "red"
+'red'
+boxes[0].color = "red"
+'red'
+boxes[0].style.color = "red"
+'red'
+boxes[0].style.backgroundColor = "red"
+'red'
+boxes[1].style.backgroundColor = "blue"
+'blue'
+boxes[2].style.backgroundColor = "green"
+'green'
+boxes[3].style.backgroundColor = "yellow"
+'yellow'
+boxes[4].style.backgroundColor = "purple"
+'purple'
+-->
