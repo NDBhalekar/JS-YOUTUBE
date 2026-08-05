@@ -1,0 +1,751 @@
+# Part 14: ES6+ Features
+
+**ES6 (ECMAScript 2015)** introduced modern JavaScript features that make code **shorter, cleaner, easier to read, and more powerful**.
+
+> Before ES6, developers wrote longer code. Today, React, Node.js, and modern JavaScript heavily rely on ES6+.
+
+---
+
+# 1. `let`
+
+## What is it?
+
+`let` is used to **declare a variable whose value can change**.
+
+## Why?
+
+Before ES6, we only had `var`, which had confusing behavior (function scope, hoisting issues). `let` solves these problems.
+
+## Syntax
+
+```javascript
+let age = 21;
+```
+
+### Explanation
+
+```javascript
+let age = 21;
+```
+
+* `let` → creates a variable
+* `age` → variable name
+* `=` → assign value
+* `21` → stored value
+
+## Example
+
+```javascript
+let score = 10;
+
+console.log(score);
+
+score = 20;
+
+console.log(score);
+```
+
+Output
+
+```text
+10
+20
+```
+
+## Real Project
+
+```javascript
+let cartItems = 0;
+
+cartItems++;
+
+console.log(cartItems);
+```
+
+Shopping cart quantity changes.
+
+---
+
+# 2. `const`
+
+## What is it?
+
+Creates a variable whose **reference cannot be reassigned**.
+
+Use it when the value should not point to something else.
+
+## Syntax
+
+```javascript
+const pi = 3.14;
+```
+
+## Example
+
+```javascript
+const country = "India";
+
+console.log(country);
+```
+
+Wrong
+
+```javascript
+const country = "India";
+
+country = "USA";
+```
+
+Output
+
+```text
+TypeError
+```
+
+## Objects
+
+```javascript
+const user = {
+    name: "Nilesh"
+};
+
+user.name = "Rahul";
+
+console.log(user);
+```
+
+Output
+
+```javascript
+{
+ name: "Rahul"
+}
+```
+
+Why?
+
+`const` protects the **variable reference**, not the object's contents.
+
+---
+
+# let vs const
+
+| let                    | const                                    |
+| ---------------------- | ---------------------------------------- |
+| Can reassign           | Cannot reassign                          |
+| Use when value changes | Use by default if value shouldn't change |
+
+---
+
+# 3. Arrow Functions
+
+## What is it?
+
+A shorter way to write functions.
+
+## Old Way
+
+```javascript
+function greet(name) {
+    return "Hello " + name;
+}
+```
+
+## ES6
+
+```javascript
+const greet = (name) => {
+    return "Hello " + name;
+};
+```
+
+## Even Shorter
+
+```javascript
+const greet = name => `Hello ${name}`;
+```
+
+## Example
+
+```javascript
+const square = num => num * num;
+
+console.log(square(5));
+```
+
+Output
+
+```text
+25
+```
+
+## Used In
+
+* React
+* Array methods
+* Event listeners
+* Async programming
+
+---
+
+# 4. Template Literals
+
+## Problem Before
+
+```javascript
+let name = "Nilesh";
+
+console.log("Hello " + name);
+```
+
+Many `+` operators.
+
+## ES6
+
+Use backticks `` ` ``.
+
+```javascript
+let name = "Nilesh";
+
+console.log(`Hello ${name}`);
+```
+
+Output
+
+```text
+Hello Nilesh
+```
+
+Multiple lines
+
+```javascript
+let msg = `
+Hello
+Welcome
+`;
+```
+
+---
+
+# 5. Destructuring
+
+## What is it?
+
+Extract values from arrays or objects into variables.
+
+---
+
+## Array
+
+```javascript
+const colors = ["Red", "Blue", "Green"];
+
+const [first, second] = colors;
+
+console.log(first);
+console.log(second);
+```
+
+Output
+
+```text
+Red
+Blue
+```
+
+---
+
+## Object
+
+```javascript
+const user = {
+    name: "Nilesh",
+    age: 21
+};
+
+const { name, age } = user;
+
+console.log(name);
+console.log(age);
+```
+
+Output
+
+```text
+Nilesh
+21
+```
+
+Used heavily in React.
+
+---
+
+# 6. Spread Operator (...)
+
+## What is it?
+
+Copies or expands arrays/objects.
+
+## Array
+
+```javascript
+const a = [1,2];
+const b = [...a,3,4];
+
+console.log(b);
+```
+
+Output
+
+```text
+[1,2,3,4]
+```
+
+---
+
+## Object
+
+```javascript
+const user = {
+    name:"Nilesh"
+};
+
+const newUser = {
+    ...user,
+    age:21
+};
+
+console.log(newUser);
+```
+
+Output
+
+```javascript
+{
+ name:"Nilesh",
+ age:21
+}
+```
+
+---
+
+# 7. Rest Operator (...)
+
+Looks the same as Spread but does the opposite.
+
+Collects remaining values.
+
+```javascript
+function sum(...numbers){
+    console.log(numbers);
+}
+
+sum(10,20,30,40);
+```
+
+Output
+
+```text
+[10,20,30,40]
+```
+
+---
+
+# Difference
+
+Spread
+
+```javascript
+const arr = [1,2];
+
+console.log(...arr);
+```
+
+Output
+
+```text
+1 2
+```
+
+Rest
+
+```javascript
+function demo(...arr){}
+```
+
+Output
+
+```text
+Collects all arguments into one array.
+```
+
+---
+
+# 8. Default Parameters
+
+If no value is passed, JavaScript uses a default value.
+
+```javascript
+function greet(name="Guest"){
+    console.log(name);
+}
+
+greet();
+```
+
+Output
+
+```text
+Guest
+```
+
+```javascript
+greet("Nilesh");
+```
+
+Output
+
+```text
+Nilesh
+```
+
+---
+
+# 9. Modules
+
+Split code into multiple files.
+
+math.js
+
+```javascript
+export function add(a,b){
+    return a+b;
+}
+```
+
+main.js
+
+```javascript
+import { add } from "./math.js";
+
+console.log(add(2,3));
+```
+
+Output
+
+```text
+5
+```
+
+Used in every React project.
+
+---
+
+# 10. Promises
+
+Handle asynchronous work.
+
+Old
+
+```javascript
+callback
+```
+
+Modern
+
+```javascript
+Promise
+```
+
+Syntax
+
+```javascript
+const promise = new Promise((resolve,reject)=>{
+
+    resolve("Success");
+
+});
+```
+
+Using it
+
+```javascript
+promise.then(result=>{
+    console.log(result);
+});
+```
+
+Output
+
+```text
+Success
+```
+
+Real Project
+
+```text
+User requests data
+
+↓
+
+Server responds later
+
+↓
+
+Promise resolves
+
+↓
+
+Display data
+```
+
+---
+
+# 11. Classes
+
+Blueprint for objects.
+
+```javascript
+class Student{
+
+    constructor(name){
+
+        this.name=name;
+
+    }
+
+    greet(){
+
+        console.log("Hello "+this.name);
+
+    }
+
+}
+
+const s1 = new Student("Nilesh");
+
+s1.greet();
+```
+
+Output
+
+```text
+Hello Nilesh
+```
+
+---
+
+# 12. Optional Chaining (?.)
+
+Prevents errors when accessing nested properties.
+
+Without
+
+```javascript
+console.log(user.address.city);
+```
+
+If `address` is undefined → Error.
+
+With
+
+```javascript
+console.log(user.address?.city);
+```
+
+Output
+
+```text
+undefined
+```
+
+No crash.
+
+---
+
+# 13. Nullish Coalescing Operator (`??`)
+
+Provides a default value **only when the left side is `null` or `undefined`**.
+
+```javascript
+let name = null;
+
+console.log(name ?? "Guest");
+```
+
+Output
+
+```text
+Guest
+```
+
+Difference from `||`
+
+```javascript
+let count = 0;
+
+console.log(count || 10);
+```
+
+Output
+
+```text
+10
+```
+
+Because `0` is falsy.
+
+Using `??`
+
+```javascript
+console.log(count ?? 10);
+```
+
+Output
+
+```text
+0
+```
+
+Because `0` is **not** `null` or `undefined`.
+
+Use `??` when `0`, `false`, or `""` are valid values.
+
+---
+
+# 14. `for...of`
+
+Loops through iterable values (arrays, strings, etc.).
+
+```javascript
+const fruits = ["Apple","Mango","Banana"];
+
+for(const fruit of fruits){
+
+    console.log(fruit);
+
+}
+```
+
+Output
+
+```text
+Apple
+Mango
+Banana
+```
+
+Used for arrays, strings, Sets, Maps.
+
+---
+
+# 15. Map
+
+Stores key-value pairs like an object, but keys can be **any data type**.
+
+```javascript
+const userMap = new Map();
+
+userMap.set("name","Nilesh");
+userMap.set("age",21);
+
+console.log(userMap.get("name"));
+```
+
+Output
+
+```text
+Nilesh
+```
+
+Loop
+
+```javascript
+for(const [key,value] of userMap){
+
+    console.log(key,value);
+
+}
+```
+
+Output
+
+```text
+name Nilesh
+age 21
+```
+
+### Why use `Map` instead of Object?
+
+* Keys can be objects, arrays, functions, etc.
+* Preserves insertion order.
+* Built-in methods like `.set()`, `.get()`, `.has()`, `.delete()`, `.clear()`.
+
+---
+
+# 16. Set
+
+Stores **only unique values**.
+
+```javascript
+const nums = new Set();
+
+nums.add(10);
+nums.add(20);
+nums.add(10);
+
+console.log(nums);
+```
+
+Output
+
+```text
+Set(2) {10,20}
+```
+
+Duplicate `10` is ignored.
+
+Another example
+
+```javascript
+const arr = [1,2,2,3,3,4];
+
+const unique = [...new Set(arr)];
+
+console.log(unique);
+```
+
+Output
+
+```text
+[1,2,3,4]
+```
+
+Real Project
+
+* Remove duplicate IDs.
+* Remove duplicate emails.
+* Remove duplicate products.
+
+---
+
+# Quick Summary
+
+| Feature                   | Purpose                                        |
+| ------------------------- | ---------------------------------------------- |
+| `let`                     | Mutable variable                               |
+| `const`                   | Variable reference can't be reassigned         |
+| Arrow Function            | Shorter function syntax                        |
+| Template Literals         | Easy string interpolation & multiline strings  |
+| Destructuring             | Extract values from arrays/objects             |
+| Spread (`...`)            | Expand/copy arrays & objects                   |
+| Rest (`...`)              | Collect remaining arguments into an array      |
+| Default Parameters        | Provide default values for function parameters |
+| Modules                   | Split code into reusable files                 |
+| Promises                  | Handle asynchronous operations                 |
+| Classes                   | Blueprint for creating objects                 |
+| Optional Chaining (`?.`)  | Safely access nested properties                |
+| Nullish Coalescing (`??`) | Default only for `null`/`undefined`            |
+| `for...of`                | Iterate over iterable values                   |
+| `Map`                     | Flexible key-value collection                  |
+| `Set`                     | Collection of unique values                    |

@@ -1,0 +1,111 @@
+   <!-- e = event object -->
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .child{
+                background-color: aliceblue;
+                border: 2px solid black;
+                padding: 14px;
+                margin: 14px;
+                cursor: pointer;
+            }
+            .childContainer{
+                background-color: rgb(130, 168, 244);
+                padding: 14px;
+                margin: 14px;
+            }
+            .container{
+                background-color: rgba(82, 201, 69, 0.784);
+                padding: 14px;
+                margin: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <section class="childContainer">
+                <div class="child">
+                    I am a child
+                </div>
+            </section>
+        </div>
+
+        <script>
+            //  document.querySelector(".child").addEventListener("click",()=>{
+            //     alert("child was clicked")
+            // })
+
+            // document.querySelector(".childContainer").addEventListener("click",()=>{
+            //     alert("childContainer was clicked")
+            // })
+
+            // document.querySelector(".container").addEventListener("click",()=>{
+            //     alert("container was clicked")
+            // }) 
+
+            //  it means a man living in udg,also in latur,also in MH,also in IND,similary whe n you click on child pop-ups of container and childcontainer also pop-ups to stop them we use e(event).stopPropogation 
+            // https://chatgpt.com/s/t_69c54938a640819183bef8dae17ea125 
+         //   e = event object e = event object Contains all event info Needed to control behavior Without e → no control over event
+      // <!-- as same as we can add eventListner similarly we can remove it using removeEventListner-->
+
+
+         document.querySelector(".child").addEventListener("click",(e)=>{
+            e.stopPropagation()//>> ye wale event se jo bhi uper wale parent eventss hain unper fire nhi hoga
+            alert("child was clicked")  
+      // <!-- as same as we can add eventListner similarly we can remove it using removeEventListner-->
+
+        // remove event after first click
+        document.querySelector(".child").removeEventListener("click", childHandler)
+            })
+
+            document.querySelector(".childContainer").addEventListener("click",(e)=>{
+            e.stopPropagation() 
+                alert("childContainer was clicked")
+            })
+
+            document.querySelector(".container").addEventListener("click",()=>{
+                alert("container was clicked")
+            })    
+            
+        
+            // setInterval and setTimeout >> this are funtion in js
+            // setInterval means kiti time nanter te perticular thing change hot rahvai infinte times
+            
+
+            // get random color function↓
+            function getRandomColor(){
+                let val1 = Math.ceil(0+Math.random()*255)
+                let val2 = Math.ceil(0+Math.random()*255)
+                let val3 = Math.ceil(0+Math.random()*255)
+                return `rgb(${val1},${val2},${val3})`
+            }
+            
+
+        //    let a= setInterval(() => {
+        //           document.querySelector(".child").style.background = getRandomColor()
+        //     }, 1000);
+            // 1000 means 1sec.
+
+            // clr interval
+            // console.log(a)
+            // mhanje je kahi ha console return karel no.te no ghen jer clr interval kela ter stop hoil setInterval
+
+            // SetTimeout
+            // it runs only one time 
+             let a= setTimeout(() => {
+                  document.querySelector(".child").style.background = getRandomColor()
+            }, 1000);
+            // 1000 means 1sec. baad olor change hua sirf ek baar
+
+            // clr interval
+            // mhanje je kahi ha console return karel no.te no ghen jer clr interval kela ter stop hoil setInterval
+            console.log(a)
+
+
+            </script>
+    </body>
+    </html>

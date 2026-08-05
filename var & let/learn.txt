@@ -1,0 +1,186 @@
+**Timestamp:** 16:39
+**Time since your last question:** ~3 minutes
+
+Ye **JavaScript ka famous interview trap** hai:
+`var` vs `let` inside **loops + setTimeout**.
+
+---
+
+# 1️⃣ Problem code (using `var`)
+
+```javascript
+for(var i = 0; i < 5; i++){
+    setTimeout(function(){
+        console.log(i)
+    },1000)
+}
+```
+
+### Expected output
+
+```
+0
+1
+2
+3
+4
+```
+
+### Actual output
+
+```
+5
+5
+5
+5
+5
+```
+
+---
+
+# 2️⃣ Kyun hua aisa?
+
+`var` **function scoped** hota hai.
+
+Loop finish hone tak:
+
+```
+i = 5
+```
+
+`setTimeout` **delay ke baad run hota hai**, tab tak loop complete ho chuka hota hai.
+
+Isliye sab jagah:
+
+```
+console.log(i)
+```
+
+value:
+
+```
+5
+```
+
+---
+
+# Execution flow
+
+```
+Loop runs instantly
+i becomes 5
+↓
+1 second later
+setTimeout executes
+↓
+console.log(i)
+```
+
+Result:
+
+```
+5 5 5 5 5
+```
+
+---
+
+# 3️⃣ Correct solution (using `let`)
+
+```javascript
+for(let i = 0; i < 5; i++){
+    setTimeout(function(){
+        console.log(i)
+    },1000)
+}
+```
+
+### Output
+
+```
+0
+1
+2
+3
+4
+```
+
+---
+
+# 4️⃣ Kyun kaam karta hai `let`?
+
+`let` **block scoped** hota hai.
+
+Har iteration me **naya `i` variable create hota hai**.
+
+```
+Iteration 1 → i = 0
+Iteration 2 → i = 1
+Iteration 3 → i = 2
+Iteration 4 → i = 3
+Iteration 5 → i = 4
+```
+
+Isliye correct values print hoti hain.
+
+---
+
+# Visualization
+
+### Using `var`
+
+```
+single variable i
+i → 0 → 1 → 2 → 3 → 4 → 5
+setTimeout reads final value
+```
+
+---
+
+### Using `let`
+
+```
+iteration 1 → i = 0
+iteration 2 → i = 1
+iteration 3 → i = 2
+iteration 4 → i = 3
+iteration 5 → i = 4
+```
+
+Har iteration **separate memory**.
+
+---
+
+# 5️⃣ Old JavaScript solution (before `let` existed)
+
+Developers **IIFE** use karte the.
+
+```javascript
+for(var i =0;i<5;i++){
+    (function(i){
+        setTimeout(function(){
+            console.log(i)
+        },1000)
+    })(i)
+}
+```
+
+---
+
+# Interview takeaway
+
+```
+var → function scope
+let → block scope
+```
+
+Isliye **loops me always `let` use karo**.
+
+---
+
+⚡ Agar chaho to main **JavaScript ka sabse confusing concept** bhi explain kar sakta hoon:
+
+```
+Event Loop + Call Stack + Web APIs
+```
+
+Ye **JavaScript asynchronous behaviour ka core concept** hai aur interviews me bahut pucha jata hai.
